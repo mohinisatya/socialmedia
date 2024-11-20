@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        form input,
+        form button {
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        #feeds {
+            background: #e0e0e0;
+            padding: 20px;
+            text-align: left;
+        }
+
+        #feeds h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Social Media Dashboard</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <div id="feeds">
+            <h2>Your Feeds</h2>
+            <p>Connect your social media accounts to view your feeds here.</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Here you would typically connect to your backend to authenticate the user and fetch their social media feeds
+
+            alert('Logged in as ' + username);
+            document.getElementById('feeds').innerHTML = `
+                <h2>Your Feeds</h2>
+                <p>Welcome, ${username}. Here are your social media feeds:</p>
+                <ul>
+                    <li>Feed item from Platform A</li>
+                    <li>Feed item from Platform B</li>
+                    <li>Feed item from Platform C</li>
+                </ul>
+            `;
+        });
+    </script>
+</body>
+
+</html>
